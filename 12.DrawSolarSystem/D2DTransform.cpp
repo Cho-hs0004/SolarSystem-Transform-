@@ -40,8 +40,8 @@ namespace D2DTM
 		
 		const auto T2 = D2D1::Matrix3x2F::Translation(m_position.x, m_position.y);
 
-		//m_matrixLocal = P * S * R  * T1 * T2;
-		m_matrixLocal = P * S * R * T2; // 포지션이 피벗을 중심으로 가게 했는데 이 방법이 맞는지 모르겠다
+		m_matrixLocal = P * S * R  * T1 * T2;
+		//m_matrixLocal = P * S * R * T2; 
 
 		if (m_parent)
 			m_matrixWorld = m_matrixLocal * m_parent->GetWorldMatrix();

@@ -62,10 +62,14 @@ public:
 
 	static int GetID() { return s_id; }
 
-	void SetPosition(const Vec2& pos)
+	void SetPosition(const Vec2& pos) // rect의 중앙을 기준으로 생성되게 pos보정
 	{
-		m_transform.SetPosition(pos);
-		m_orbit_transform.SetPosition(pos);
+		float half_w = (m_rect.right - m_rect.left) / 2;
+		float half_h = (m_rect.bottom - m_rect.top) / 2;;
+
+		Vec2 realpos = { pos.x - half_w, pos.y + half_h };
+		m_transform.SetPosition(realpos);
+		m_orbit_transform.SetPosition(realpos);
 	}
 
 	void Move(const Vec2& offset)

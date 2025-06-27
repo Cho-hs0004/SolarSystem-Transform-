@@ -2,6 +2,7 @@
 *.d
 
 # Compiled Object files
+*.tlog
 *.slo
 *.lo
 *.o
@@ -29,4 +30,8 @@
 # Executables
 *.exe
 *.out
-*.app
+*.appj
+
+#directory
+x64/
+.vs/
