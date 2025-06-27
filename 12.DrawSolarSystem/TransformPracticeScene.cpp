@@ -328,11 +328,11 @@ void TransformPracticeScene::AddEarth()
 
 	SolarObject* pNewBox = new SolarObject(m_EarthBitmapPtr);
 
-	pNewBox->SetPosition(Vec2(worldPt.x, worldPt.y));
-
 	pNewBox->GetTransform()->SetScale({ 0.5, 0.5 });
 
 	pNewBox->SetParent(m_PlanetObjects.front());
+
+	pNewBox->SetPosition(Vec2(worldPt.x, worldPt.y));
 
 	m_SolarObjects.push_back(pNewBox);
 	m_PlanetObjects.push_back(pNewBox);
@@ -340,17 +340,17 @@ void TransformPracticeScene::AddEarth()
 
 void TransformPracticeScene::AddMoon()
 {
-	D2D1_POINT_2F worldPt = { 190.f, 190.f };
+	D2D1_POINT_2F worldPt = { 0.f, 0.f };
 
 	std::cout << "x : " << worldPt.x << " y : " << worldPt.y << std::endl;
 
 	SolarObject* pNewBox = new SolarObject(m_MoonBitmapPtr);
 
-	pNewBox->SetPosition(Vec2(worldPt.x, worldPt.y));
-
 	pNewBox->GetTransform()->SetScale({ 0.2, 0.2 });
 
 	pNewBox->SetParent(m_PlanetObjects.back());
+
+	pNewBox->SetPosition(Vec2(worldPt.x, worldPt.y));
 
 	m_SolarObjects.push_back(pNewBox);
 	m_PlanetObjects.push_back(pNewBox);
@@ -362,11 +362,11 @@ void TransformPracticeScene::AddSaturn()
 
 	SolarObject* pNewBox = new SolarObject(m_SaturnBitmapPtr);
 
-	pNewBox->SetPosition(Vec2(worldPt.x, worldPt.y));
-
 	pNewBox->GetTransform()->SetScale({ 0.5, 0.5 });
 
 	pNewBox->SetParent(m_PlanetObjects.front());
+
+	pNewBox->SetPosition(Vec2(worldPt.x, worldPt.y));
 
 	m_SolarObjects.push_back(pNewBox);
 	m_PlanetObjects.push_back(pNewBox);
